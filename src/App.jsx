@@ -51,15 +51,13 @@ class App extends Component {
     return (
       <>
         <NavBar productCount={products.length} />
-        <div className="container mt-4">
-          <Products
-            products={products}
-            onReset={this.handleReset}
-            onIncrement={this.handleIncrement}
-            onDecrement={this.handleDecrement}
-            onDelete={this.handleDelete}
-          />
-        </div>
+        <Products
+          products={products}
+          onReset={this.handleReset}
+          onIncrement={this.handleIncrement}
+          onDecrement={this.handleDecrement}
+          onDelete={this.handleDelete}
+        />
       </>
     );
   }

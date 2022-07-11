@@ -10,8 +10,9 @@ class Products extends Component {
       onDelete,
       products,
     } = this.props;
+
     return (
-      <>
+      <div className="container mt-4">
         <button onClick={onReset} className="btn btn-primary">
           Reset
         </button>
@@ -24,7 +25,7 @@ class Products extends Component {
             onDecrement={onDecrement}
           />
         ))}
-      </>
+      </div>
     );
   }
 }
