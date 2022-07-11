@@ -5,7 +5,7 @@ class Products extends Component {
   state = {
     products: [
       { id: 1, quantity: 10 },
-      { id: 2, quantity: 10 },
+      { id: 2, quantity: 9 },
       { id: 3, quantity: 10 },
       { id: 4, quantity: 10 },
     ],
@@ -40,8 +40,8 @@ class Products extends Component {
     this.setState({ products });
   };
 
-  handleDelete = (product) => {
-    const products = this.state.products.filter((p) => p.id !== product.id);
+  handleDelete = (id) => {
+    const products = this.state.products.filter((p) => p.id !== id);
     this.setState({ products });
   };
 
