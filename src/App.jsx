@@ -11,6 +11,24 @@ class App extends Component {
       { id: 4, quantity: 10 },
     ],
   };
+
+  render() {
+    const { products } = this.state;
+
+    return (
+      <div className="container">
+        <NavBar productCount={products.length} />
+        <Products
+          products={products}
+          onReset={this.handleReset}
+          onIncrement={this.handleIncrement}
+          onDecrement={this.handleDecrement}
+          onDelete={this.handleDelete}
+        />
+      </div>
+    );
+  }
+
   handleReset = () => {
     const products = this.state.products.map((product) => ({
       ...product,
@@ -44,23 +62,6 @@ class App extends Component {
     const products = this.state.products.filter((p) => p.id !== id);
     this.setState({ products });
   };
-
-  render() {
-    const { products } = this.state;
-
-    return (
-      <>
-        <NavBar productCount={products.length} />
-        <Products
-          products={products}
-          onReset={this.handleReset}
-          onIncrement={this.handleIncrement}
-          onDecrement={this.handleDecrement}
-          onDelete={this.handleDelete}
-        />
-      </>
-    );
-  }
 }
 
 export default App;

@@ -5,26 +5,37 @@ class Product extends Component {
     const { onIncrement, onDecrement, onDelete, product } = this.props;
 
     return (
-      <div className="m-2">
-        <span className={this.getBadgeClasses()}>{this.formatQuantity()}</span>
-        <button
-          onClick={() => onIncrement(product)}
-          className="btn btn-secondary ms-2"
-        >
-          +
-        </button>
-        <button
-          onClick={() => onDecrement(product)}
-          className="btn btn-secondary ms-2"
-        >
-          -
-        </button>
-        <button
-          onClick={() => onDelete(product.id)}
-          className="btn btn-danger ms-2"
-        >
-          X
-        </button>
+      <div className="container m-2">
+        <span className="row">
+          <span className="col-sm-1">
+            {" "}
+            <span className={this.getBadgeClasses()}>
+              {this.formatQuantity()}
+            </span>
+          </span>
+          <span className="col">
+            <button
+              onClick={() => onIncrement(product)}
+              className="btn btn-secondary"
+            >
+              +
+            </button>
+
+            <button
+              onClick={() => onDecrement(product)}
+              className="btn btn-secondary ms-2"
+            >
+              -
+            </button>
+
+            <button
+              onClick={() => onDelete(product.id)}
+              className="btn btn-danger ms-2"
+            >
+              X
+            </button>
+          </span>
+        </span>
       </div>
     );
   }
