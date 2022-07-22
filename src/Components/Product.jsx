@@ -7,7 +7,7 @@ class Product extends Component {
     return (
       <div className="container m-2">
         <span className="row">
-          <span className="col-sm-1">
+          <span className="col-1">
             {" "}
             <span className={this.getBadgeClasses()}>
               {this.formatQuantity()}
@@ -23,14 +23,15 @@ class Product extends Component {
 
             <button
               onClick={() => onDecrement(product)}
-              className="btn btn-secondary ms-2"
+              className="btn btn-secondary mx-2"
+              disabled={product.quantity === 0}
             >
               -
             </button>
 
             <button
               onClick={() => onDelete(product.id)}
-              className="btn btn-danger ms-2"
+              className="btn btn-danger"
             >
               X
             </button>
