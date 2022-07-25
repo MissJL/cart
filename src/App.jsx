@@ -16,16 +16,18 @@ class App extends Component {
     const { products } = this.state;
 
     return (
-      <div className="container">
+      <>
         <NavBar productCount={products.length} />
-        <Products
-          products={products}
-          onReset={this.handleReset}
-          onIncrement={this.handleIncrement}
-          onDecrement={this.handleDecrement}
-          onDelete={this.handleDelete}
-        />
-      </div>
+        <div className="container">
+          <Products
+            products={products}
+            onReset={this.handleReset}
+            onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
+            onDelete={this.handleDelete}
+          />
+        </div>
+      </>
     );
   }
 

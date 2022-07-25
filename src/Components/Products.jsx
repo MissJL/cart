@@ -13,7 +13,7 @@ class Products extends Component {
 
     return (
       <div className="container mt-4">
-        <button onClick={onReset} className="btn btn-primary">
+        <button onClick={onReset} className="btn btn-primary mb-2">
           Reset
         </button>
         {products.map((product) => (
